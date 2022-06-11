@@ -1,0 +1,62 @@
+.body-section {
+  background-color: #FDD349;
+}
+
+#cardid {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+.navbar {
+  height: 15%;
+}
+
+.petshop_name {
+  font-weight: bold;
+  position: absolute;
+  font-family: 'Open Sans', sans-serif;
+  padding: 15% 0 30% 50%;
+  font-size: 3rem;
+  color: white;
+}
+
+.card-decoration {
+  background-color: #525401;
+  margin: 4% 0;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+}
+
+.card-title {
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.card-img-top {
+  border-radius: 10%;
+}
+
+.font-cont {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.fab {
+  color: white;
+}
+
+.fab:hover {
+  color: #FDD349;
+}
+
+@media (max-width: 780px) {
+  .card-img-top {
+    display: none;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
