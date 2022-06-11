@@ -54,6 +54,12 @@
   color: #FDD349;
 }
 
+.iconica {
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+}
+
 @media (max-width: 780px) {
   .card-img-top {
     display: none;

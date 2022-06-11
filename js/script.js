@@ -19,7 +19,7 @@ class Animals {
                   <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                   <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                   <p class="card-text"><strong>Size:</strong> ${this.size}</p> 
-                  <h1 class="vac text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">Vaccine: ${this.vaccine}</h1>
+                  <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">${this.vaccine ? "Vaccinated <img src='../pics/tnailup.png' class='iconica'>" : "I need vaccine <img src='../pics/tnaildown.png' class='iconica'>"}</h1>
                 </div>
               </div>
         </div>`;
@@ -42,7 +42,7 @@ class dogs extends Animals {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">Vaccine: ${this.vaccine}</h1>
+                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">${this.vaccine ? "Vaccinated <img src='../pics/tnailup.png' class='iconica'>" : "I need vaccine <img src='../pics/tnaildown.png' class='iconica'>"}</h1>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Training Skills:</strong> ${this.trainingSkills}</p>
                     <p class="card-text"><strong>Breed info:</strong> 
@@ -69,7 +69,7 @@ class cats extends Animals {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">Vaccine: ${this.vaccine}</h1>
+                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">${this.vaccine ? "Vaccinated <img src='../pics/tnailup.png' class='iconica'>" : "I need vaccine <img src='../pics/tnaildown.png' class='iconica'>"}</h1>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Fur color:</strong> ${this.furColor}</p>
                     <p class="card-text"><strong>Breed info: </strong>
