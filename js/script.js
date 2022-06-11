@@ -19,7 +19,7 @@ class Animals {
                   <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                   <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                   <p class="card-text"><strong>Size:</strong> ${this.size}</p> 
-                  <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">${this.vaccine ? "Vaccinated <img src='../pics/tnailup.png' class='iconica'>" : "I need vaccine <img src='../pics/tnaildown.png' class='iconica'>"}</h1>
+                  <div class="vaccine"><button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button></div>
                 </div>
               </div>
         </div>`;
@@ -42,7 +42,7 @@ class dogs extends Animals {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">${this.vaccine ? "Vaccinated <img src='../pics/tnailup.png' class='iconica'>" : "I need vaccine <img src='../pics/tnaildown.png' class='iconica'>"}</h1>
+                    <div class="vaccine"><button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button></div>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Training Skills:</strong> ${this.trainingSkills}</p>
                     <p class="card-text"><strong>Breed info:</strong> 
@@ -69,7 +69,7 @@ class cats extends Animals {
                     <p class="card-text"><strong>Gender:</strong> ${this.gender}</p>
                     <p class="card-text"><strong>Age:</strong> ${this.age}</p>
                     <p class="card-text"><strong>Size:</strong> ${this.size}</p>
-                    <h1 class="text-center btn d-flex justify-content-center bg-${this.vaccine ? "success" : "danger"}">${this.vaccine ? "Vaccinated <img src='../pics/tnailup.png' class='iconica'>" : "I need vaccine <img src='../pics/tnaildown.png' class='iconica'>"}</h1>
+                    <div class="vaccine"><button type="" class=" btn-success w-100 rounded-pill vaccine-btn">${this.vaccine}</button></div>
                     <p class="card-text"><strong>Breed:</strong> ${this.breed}</p>
                     <p class="card-text"><strong>Fur color:</strong> ${this.furColor}</p>
                     <p class="card-text"><strong>Breed info: </strong>
@@ -89,17 +89,51 @@ new dogs("Robert", 5, "Male", "Large", true, "../pics/robert2.jpg", "American Pi
 new Animals("Black Jack", 1, "Male", "Small", false, "../pics/jack black.jpg");
 new Animals("Melissa", 1, "Female", "Small", false, "../pics/melissa.jpg");
 document.querySelector(".sorting").addEventListener("click", agesort);
-function agesort() {
-    array.sort(function (min, max) {
-        return min.age - max.age;
-    });
-    document.querySelector(".result").innerHTML = "";
-    cards();
-}
-;
+const vaccineBtn = document.getElementsByClassName("vaccine-btn");
 function cards() {
     array.forEach((val) => {
         document.querySelector(".result").innerHTML += val.displayInfo();
     });
 }
 cards();
+function displayButton() {
+    for (let i = 0; i < vaccineBtn.length; i++) {
+        if (array[i].vaccine === true) {
+            document.getElementsByClassName("vaccine")[i].innerHTML = `<button type="" class="btn btn-success w-100 rounded-pill vaccine-btn"><h4>Vaccine <img src="../pics/tnailup.png" alt="" class="iconica"></h4></button>`;
+        }
+        else if (array[i].vaccine === false) {
+            document.getElementsByClassName("vaccine")[i].innerHTML = `<button type="" class="btn btn-danger w-100 rounded-pill vaccine-btn"><h4>Vaccine  <img src="../pics/tnaildown.png" alt="" class="iconica"></h4></button>`;
+        }
+        ;
+    }
+    ;
+    checkVaccine();
+}
+;
+displayButton();
+function checkVaccine() {
+    for (let i = 0; i < vaccineBtn.length; i++) {
+        vaccineBtn[i].addEventListener("click", function () {
+            if (array[i].vaccine == true) {
+                array[i].vaccine = false;
+            }
+            else if (array[i].vaccine == false) {
+                array[i].vaccine = true;
+            }
+            displayButton();
+        });
+    }
+    ;
+}
+;
+function agesort() {
+    array.sort(function (min, max) {
+        return min.age - max.age;
+    });
+    document.querySelector(".result").innerHTML = "";
+    cards();
+    checkVaccine();
+    displayButton();
+}
+;
+displayButton();
